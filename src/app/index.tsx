@@ -1,98 +1,115 @@
-import * as Device from "expo-device";
-import { Platform, StyleSheet } from "react-native";
+import { router } from "expo-router";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-import { AnimatedIcon } from "@/components/animated-icon";
-import { HintRow } from "@/components/hint-row";
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
-import { WebBadge } from "@/components/web-badge";
-import { BottomTabInset, MaxContentWidth, Spacing } from "@/constants/theme";
-
-function getDevMenuHint() {
-  if (Platform.OS === "web") {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === "android" ? "cmd+m (or ctrl+m)" : "cmd+d";
-  return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
-  );
-}
 
 export default function HomeScreen() {
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
-
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
-
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
+    <SafeAreaView style={styles.container}>
+      <View style={styles.content}>
+        <View style={styles.logoContainer}>
+          <Image
+            source={require("../../assets/images/AuDay.png")}
+            style={styles.logoImage}
+            resizeMode="contain"
           />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
 
-        {Platform.OS === "web" && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+          <Text style={styles.logoText}>AuDay</Text>
+
+          <Text style={styles.slogan}>O dia dele, pertinho de você.</Text>
+        </View>
+
+        <View style={styles.buttonsContainer}>
+          <Pressable
+            style={styles.loginButton}
+            onPress={() => router.push("/login")}
+          >
+            <Text style={styles.loginButtonText}>Entrar</Text>
+          </Pressable>
+
+          <Pressable
+            style={styles.registerButton}
+            onPress={() => router.push("/cadastro")}
+          >
+            <Text style={styles.registerButtonText}>Criar conta</Text>
+          </Pressable>
+
+          <Pressable onPress={() => router.push("/recuperarSenha")}>
+            <Text style={styles.forgotPassword}>Esqueci a minha senha</Text>
+          </Pressable>
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    flexDirection: "row",
+    backgroundColor: "#FFFCFA",
   },
-  safeArea: {
+  content: {
     flex: 1,
-    paddingHorizontal: Spacing.four,
+    justifyContent: "space-between",
     alignItems: "center",
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
+    paddingHorizontal: 32,
+    paddingTop: 40,
+    paddingBottom: 40,
   },
-  heroSection: {
-    alignItems: "center",
-    justifyContent: "center",
+  logoContainer: {
     flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
-  title: {
+  logoImage: {
+    width: 290,
+    height: 210,
+  },
+  logoText: {
+    fontSize: 56,
+    fontWeight: "800",
+    color: "#A58BD4",
+    letterSpacing: 1,
+  },
+  slogan: {
+    marginTop: 10,
+    fontSize: 16,
+    color: "#8B8295",
     textAlign: "center",
   },
-  code: {
-    textTransform: "uppercase",
+  buttonsContainer: {
+    width: "100%",
+    gap: 16,
+    alignItems: "center",
   },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: "stretch",
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
+  loginButton: {
+    backgroundColor: "#A58BD4",
+    width: "100%",
+    paddingVertical: 18,
+    borderRadius: 30,
+    alignItems: "center",
+  },
+  loginButtonText: {
+    color: "#FFFFFF",
+    fontSize: 17,
+    fontWeight: "600",
+  },
+  registerButton: {
+    backgroundColor: "#F0EBFA",
+    width: "100%",
+    paddingVertical: 18,
+    borderRadius: 30,
+    alignItems: "center",
+  },
+  registerButtonText: {
+    color: "#8C70C1",
+    fontSize: 17,
+    fontWeight: "600",
+  },
+  forgotPassword: {
+    marginTop: 12,
+    color: "#8C70C1",
+    fontSize: 14,
+    textDecorationLine: "underline",
   },
 });
