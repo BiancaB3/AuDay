@@ -1,56 +1,96 @@
-# Welcome to your Expo app 👋
+<div align="center">
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<img src="./assets/images/AuDay.png" alt="Logo do AuDay" width="180" />
 
-## Get started
+# 🐶 AuDay
 
-1. Install dependencies
+### O dia dele, pertinho de você. 💜
 
-   ```bash
-   npm install
-   ```
+**Um diário digital para acompanhar os momentos especiais do seu pet na creche ou escola.**
 
-2. Start the app
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-A58BD4)
+![React Native](https://img.shields.io/badge/React%20Native-20232A?logo=react)
+![Expo](https://img.shields.io/badge/Expo-000020?logo=expo)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript)
 
-   ```bash
-   npx expo start
-   ```
+</div>
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 💜 Sobre o projeto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+O **AuDay** é um aplicativo mobile pensado para aproximar tutores e profissionais de creches e escolas para cães.
 
-## Get a fresh project
+A proposta é permitir que os profissionais registrem momentos do dia a dia dos pets, compartilhando fotos, atividades e informações importantes em um diário digital.
 
-When you're ready, run:
+Assim, os tutores podem acompanhar a rotina dos seus companheiros, mesmo à distância.
+
+## ✨ Funcionalidades planejadas
+
+- 🐾 Cadastro de tutores e pets.
+- 🔐 Login e recuperação de senha.
+- 📸 Registro de fotos e atividades dos pets.
+- 📖 Diário com atualizações da rotina.
+- 🔔 Notificações sobre novos registros.
+- 💜 Interface acolhedora e intuitiva.
+
+> O aplicativo está em desenvolvimento. As funcionalidades serão implementadas gradualmente.
+
+## 🛠️ Tecnologias
+
+O projeto utiliza:
+
+- **React Native** — desenvolvimento da interface mobile.
+- **Expo** — ferramentas para desenvolvimento e execução do aplicativo.
+- **TypeScript** — linguagem utilizada no projeto.
+- **Expo Router** — organização das telas e navegação.
+
+## 📱 Identidade visual
+
+O AuDay utiliza uma paleta de cores suaves, com destaque para tons de lilás, azul e branco.
+
+A identidade visual foi pensada para transmitir carinho, leveza e proximidade entre tutores e seus pets.
+
+## 🚀 Como executar o projeto
+
+**1. Clone o repositório**
 
 ```bash
-npm run reset-project
+git clone https://github.com/BiancaB3/AuDay.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**2. Acesse a pasta**
 
-### Other setup steps
+```bash
+cd AuDay
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+**3. Instale as dependências**
 
-## Learn more
+```bash
+npm install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+**4. Inicie o Expo**
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+Para executar no emulador Android, pressione `a` no terminal, com o emulador configurado e aberto.
 
-Join our community of developers creating universal apps.
+## 📌 Status do desenvolvimento
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+🚧 **Em desenvolvimento**
+
+O projeto está sendo construído gradualmente, com foco no aprendizado de desenvolvimento mobile e na implementação das funcionalidades propostas.
+
+---
+
+<div align="center">
+
+**Feito com 💜 e muitas patinhas.**
+
+_AuDay — O dia dele, pertinho de você._
+
+</div>
