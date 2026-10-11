@@ -1,41 +1,45 @@
 import { router } from "expo-router";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HomeScreen() {
+export default function LoginScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.logoContainer}>
-          <Image
-            source={require("../../../../assets/images/AuDay.png")}
-            style={styles.logoImage}
-            resizeMode="contain"
+        <Text style={styles.titulo}>Bem-vindo de volta! 💜</Text>
+
+        <Text style={styles.subtitulo}>
+          Entre na sua conta para acompanhar o dia do seu pet.
+        </Text>
+
+        <View style={styles.formulario}>
+          <TextInput
+            style={styles.input}
+            placeholder="E-mail"
+            keyboardType="email-address"
+            autoCapitalize="none"
           />
 
-          <Text style={styles.logoText}>AuDay</Text>
-
-          <Text style={styles.slogan}>O dia dele, pertinho de você.</Text>
-        </View>
-
-        <View style={styles.buttonsContainer}>
-          <Pressable
-            style={styles.loginButton}
-            onPress={() => router.push("/login")}
-          >
-            <Text style={styles.loginButtonText}>Entrar</Text>
-          </Pressable>
+          <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
 
           <Pressable
-            style={styles.registerButton}
-            onPress={() => router.push("/cadastro")}
+            style={styles.esqueciSenha}
+            onPress={() => router.push("/recuperarSenha")}
           >
-            <Text style={styles.registerButtonText}>Criar conta</Text>
+            <Text style={styles.link}>Esqueci minha senha</Text>
           </Pressable>
 
-          <Pressable onPress={() => router.push("/recuperarSenha")}>
-            <Text style={styles.forgotPassword}>Esqueci a minha senha</Text>
+          <Pressable style={styles.botao}>
+            <Text style={styles.textoBotao}>Entrar</Text>
           </Pressable>
+
+          <View style={styles.cadastroContainer}>
+            <Text style={styles.textoCadastro}>Ainda não tem uma conta? </Text>
+
+            <Pressable onPress={() => router.push("/cadastro")}>
+              <Text style={styles.link}>Criar conta</Text>
+            </Pressable>
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -49,67 +53,63 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 32,
-    paddingTop: 40,
-    paddingBottom: 40,
-  },
-  logoContainer: {
-    flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
+    paddingHorizontal: 28,
   },
-  logoImage: {
-    width: 290,
-    height: 210,
-  },
-  logoText: {
-    fontSize: 56,
+  titulo: {
+    fontSize: 28,
     fontWeight: "800",
     color: "#A58BD4",
-    letterSpacing: 1,
+    textAlign: "center",
+    marginBottom: 12,
   },
-  slogan: {
-    marginTop: 10,
-    fontSize: 16,
+  subtitulo: {
+    fontSize: 15,
     color: "#8B8295",
     textAlign: "center",
+    lineHeight: 22,
+    marginBottom: 36,
   },
-  buttonsContainer: {
+  formulario: {
     width: "100%",
-    gap: 16,
-    alignItems: "center",
   },
-  loginButton: {
+  input: {
+    backgroundColor: "#FFFFFF",
+    borderWidth: 1,
+    borderColor: "#E5DDF0",
+    borderRadius: 12,
+    padding: 15,
+    fontSize: 15,
+    marginBottom: 16,
+  },
+  esqueciSenha: {
+    alignSelf: "flex-end",
+    marginBottom: 24,
+  },
+  link: {
+    color: "#8C70C1",
+    fontSize: 14,
+    textDecorationLine: "underline",
+  },
+  botao: {
     backgroundColor: "#A58BD4",
-    width: "100%",
-    paddingVertical: 18,
     borderRadius: 30,
+    paddingVertical: 17,
     alignItems: "center",
   },
-  loginButtonText: {
+  textoBotao: {
     color: "#FFFFFF",
     fontSize: 17,
     fontWeight: "600",
   },
-  registerButton: {
-    backgroundColor: "#F0EBFA",
-    width: "100%",
-    paddingVertical: 18,
-    borderRadius: 30,
-    alignItems: "center",
+  cadastroContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    marginTop: 28,
   },
-  registerButtonText: {
-    color: "#8C70C1",
-    fontSize: 17,
-    fontWeight: "600",
-  },
-  forgotPassword: {
-    marginTop: 12,
-    color: "#8C70C1",
+  textoCadastro: {
+    color: "#8B8295",
     fontSize: 14,
-    textDecorationLine: "underline",
   },
 });
