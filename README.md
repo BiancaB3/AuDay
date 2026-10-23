@@ -2,7 +2,7 @@
 
 <img src="./assets/images/AuDay.png" alt="Logo do AuDay" width="180" />
 
-# 🐶 AuDay
+# AuDay
 
 ### O dia dele, pertinho de você. 💜
 
